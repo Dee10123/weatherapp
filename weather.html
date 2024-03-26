@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Widget</title>
+    <style>
+       html {
+            background-image: url('https://wallpapersmug.com/download/3840x2160/7a22c5/forest_mountains_sunset_cool_weather_minimalism.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%; 
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.522);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .widget-container {
+            margin-bottom: 20px;
+            border: 1px solid #b5b5b5;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .widget{
+            margin-bottom: 20px;
+            border: 1px solid #b5b5b5;
+            border-radius: 8px;
+            padding: 5px;
+            margin-left: 250px;
+            margin-right: 250px;
+        }
+        .weather-button {
+            background-color: #0088ff;
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .weather-button:hover {
+            background-color: #2e2e2e;
+        }
+        .weather-widget {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Weather Widget</h2>
+        <div class="widget">
+            <p>ITE 308 - AU-FA1-IT2-SOUTH1</p>
+        </div>
+        <!-- Manila weather widget and button -->
+        <div class="weather-widget" id="manila-weather">
+            <a class="weatherwidget-io" href="https://forecast7.com/en/14d60120d98/manila/"
+                data-label_1="MANILA" data-label_2="WEATHER" data-theme="original">MANILA
+                WEATHER</a>
+            <script>
+                !function(d,s,id){
+                    var js,fjs=d.getElementsByTagName(s)[0];
+                    if(!d.getElementById(id)){
+                        js=d.createElement(s);
+                        js.id=id;
+                        js.src='https://weatherwidget.io/js/widget.min.js';
+                        fjs.parentNode.insertBefore(js,fjs);
+                    }
+                }(document,'script','weatherwidget-io-js');
+            </script>
+        </div>
+        <button class="weather-button" onclick="displayManilaWeather()">Manila Weather</button>
+        <!-- End of Manila weather widget and button -->
+        <div class="widget-container">
+            <a class="weatherwidget-io" href="https://forecast7.com/en/10d72122d56/iloilo-city/"
+                data-label_1="ILOILO" data-label_2="WEATHER" data-theme="original">ILOILO
+                WEATHER</a>
+            <script>
+                !function(d,s,id){
+                    var js,fjs=d.getElementsByTagName(s)[0];
+                    if(!d.getElementById(id)){
+                        js=d.createElement(s);
+                        js.id=id;
+                        js.src='https://weatherwidget.io/js/widget.min.js';
+                        fjs.parentNode.insertBefore(js,fjs);
+                    }
+                }(document,'script','weatherwidget-io-js');
+            </script>
+        </div>
+    </div>
+    <script>
+        function displayManilaWeather() {
+            window.open("https://forecast7.com/en/14d60120d98/manila/", "_blank", "width=700,height=500");
+        }
+    </script>
+</body>
+</html>
